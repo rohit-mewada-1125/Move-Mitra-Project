@@ -290,19 +290,65 @@
           return min + Math.random() * (max - min);
         }
 
-        var ORBIT_ICONS = [
-          // truck
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M1 3h13v13H1z"/><path d="M14 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18" r="1.8"/><circle cx="16.5" cy="18" r="1.8"/></svg>',
-          // parcel / box
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>',
-          // bike
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="5.5" cy="17.5" r="3.4"/><circle cx="18.5" cy="17.5" r="3.4"/><path d="M15 6a1 1 0 100-2 1 1 0 000 2z"/><path d="M12 17.5V14l-3-3 4-3 2 3h3"/></svg>',
-          // location pin
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
-          // parcel with arrow
-          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M3 8l2-5h14l2 5"/><path d="M9 13l3 3 3-3"/><path d="M12 16v-5"/></svg>',
+       var ORBIT_ICONS = [
+          // van
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 7h12v9H2z"/><path d="M14 10h4l4 3v3h-8z"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg>',
+
+          // airplane
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M2 13l20-5-6 6 3 6-4-2-3-4-5 1z"/></svg>',
+
+          // cargo ship
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 15h18l-2 4H5z"/><path d="M7 15V6h8v9"/><path d="M9 9h4"/></svg>',
+
+          // train
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="3" width="14" height="15" rx="2"/><path d="M8 7h3M13 7h3"/><path d="M8 12h8"/><path d="M8 18l-2 3M16 18l2 3"/></svg>',
+
+          // warehouse
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 10l9-6 9 6"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>',
+
+          // forklift
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/><path d="M5 18V8h5v5h4v5"/><path d="M18 8v8"/><path d="M20 16h-4"/></svg>',
+
+          // container
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="12" rx="1"/><path d="M7 6v12M11 6v12M15 6v12M19 6v12"/></svg>',
+
+          // route
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="6" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><path d="M8 18c4 0 4-6 8-6"/></svg>',
+
+          // compass
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5l-2 7-7 2 2-7 7-2z"/></svg>',
+
+          // delivery handoff
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="7" width="7" height="6" rx="1"/><path d="M10 10h5l2 2h4"/><path d="M7 13l2 4h7"/></svg>',
+
+          // package check
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M9 13l2 2 4-4"/></svg>',
+
+          // package search
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l8 4-8 4-8-4 8-4z"/><path d="M4 7v8l8 4 3-1.5"/><circle cx="18" cy="18" r="3"/><path d="M20.5 20.5L22 22"/></svg>',
+
+          // globe shipping
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg>',
+
+          // clock / fast delivery
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+
+          // shield / secure shipping
+          '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3l7 3v5c0 5-3.5 8-7 10-3.5-2-7-5-7-10V6l7-3z"/><path d="M9.5 12l2 2 3-4"/></svg>'
         ];
-        var ORBIT_COLORS = ["#1d4fa3", "#2e9e44", "#45b85a", "#0e2c63"];
+
+        var ORBIT_COLORS = [
+          "#0E2C63",
+          "#123A80",
+          "#1D4FA3",
+          "#2563EB",
+          "#2E9E44",
+          "#3BAF4F",
+          "#45B85A",
+          "#5CCB72",
+          "#14B8A6",
+          "#0EA5E9"
+        ];
 
         var orbitField = document.createElement("div");
         orbitField.setAttribute("aria-hidden", "true");
@@ -316,9 +362,9 @@
         hero.insertBefore(orbitField, hero.firstChild);
 
         var LAYER_CONFIG = [
-          { count: 6, size: [14, 20], opacity: [0.1, 0.18], orbitDuration: 150, mouseStrength: 6, scrollY: -12 },
-          { count: 6, size: [20, 28], opacity: [0.18, 0.28], orbitDuration: 110, mouseStrength: 14, scrollY: -26 },
-          { count: 5, size: [26, 38], opacity: [0.3, 0.45], orbitDuration: 80, mouseStrength: 24, scrollY: -42 },
+          { count: 15, size: [14, 20], opacity: [0.1, 0.18], orbitDuration: 150, mouseStrength: 6, scrollY: -12 },
+          { count: 15, size: [20, 28], opacity: [0.18, 0.28], orbitDuration: 110, mouseStrength: 14, scrollY: -26 },
+          { count: 15, size: [26, 38], opacity: [0.3, 0.45], orbitDuration: 80, mouseStrength: 24, scrollY: -42 },
         ];
 
         var mouseLayers = [];
