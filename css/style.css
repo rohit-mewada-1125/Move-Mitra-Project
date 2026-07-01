@@ -685,3 +685,14 @@ section{ padding:84px 0; }
   .footer-grid{ grid-template-columns:1fr; }
   .trust-strip ul{ justify-content:center; text-align:center; }
 }
+
+.green-text .gsap-char {
+    color: #2e9e44; 
+}
+.gsap-char {
+    display: inline-block;
+    white-space: pre; 
+}
+.green-text {
+    white-space: nowrap;
+}
